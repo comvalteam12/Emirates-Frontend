@@ -13,6 +13,16 @@ export class HomeComponent implements OnInit {
     $('.img-2, .img-3').hide();
   }
 
+  selectDiselect(event: any) {
+    event.preventDefault();
+    event = event.currentTarget;
+    if ($(event).hasClass('active')) {
+      $(event).removeClass('active');
+    } else {
+      $(event).addClass('active');
+    }
+  }
+
   accordian(event: any) {
     console.log(event);
     if (event.id == 'heading-1') {
@@ -25,5 +35,9 @@ export class HomeComponent implements OnInit {
       $('.img-3').show();
       $('.img-1, .img-2').hide();
     }
+  }
+
+  register() {
+    console.log('sd');
   }
 }

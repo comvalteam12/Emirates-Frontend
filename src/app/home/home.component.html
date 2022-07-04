@@ -753,3 +753,460 @@
 
 </div>
 <app-footer></app-footer>
+
+      <!-------------- Modal ONE ------->
+      <!-------------- Modal ONE ------->
+      <div class="modal indexModal fade" id="indexModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+              <div class="modal-body">
+                 <div  id="grad1">
+                    <form id="msform" class="contact-form needs-validation">
+                       <button type="reset" class="close cls-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+                       <!-- progressbar -->
+                       <fieldset class="row mlr-0" style="display: none;">
+                          <div class="col-md-8 main-form-sec" id="register-form">
+                             <div class="top-title">
+                                <h5>Welcome to &lt;&lt;Site Name&gt;&gt;</h5>
+                                <p>Get started – Request for Online Demo and start tracking new business opportunities based on your Industry Sectors</p>
+                             </div>
+                             <div class="material-textfield">
+                                <input placeholder=" " type="text" name="fname" class="form-control form-control-lg" id="fname" required>
+                                <label class="material-label">Enter Name</label>
+                             </div>
+                             <div class="material-textfield">
+                                <input placeholder=" " type="text" name="cname" class="form-control form-control-lg" id="cname" required>
+                                <label class="material-label">Enter Company Name</label>
+                              </div>
+                              <div class="material-textfield">
+                                <input id="phone" placeholder=" " type="tel" name="phone" class="form-control form-control-lg tel-drop">
+                                <label class="material-label">Enter Mobile Number</label>
+                             </div>
+                             <div class="material-textfield">
+                                <input placeholder=" " type="email" name="email" class="form-control form-control-lg" id="email" required>
+                                <label class="material-label">Enter Email</label>
+                             </div>
+                             <div class="capcha-img">
+                                <img src="assets/img/capcha.png">
+                             </div>
+                             <div class="login-txt">
+                                <p class="txt-account">Already have an account? <a href="#">Log in </a></p>
+                             </div>
+                             <input type="button" name="next" id="register" class="next action-button" value="Continue" (click)="register()" />
+                          </div>
+                          <div class="col-md-4 p-0">
+                             <div class="modal-right">
+                                <div class="top">
+                                   <ul class="sector-sec-ul">
+                                      <li>
+                                         <a href="#" class="sector-box first-box">
+                                         <img src="assets/img/main/icon/1.png" alt="">
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <a href="#" class="sector-box yellow-box">
+                                         <img src="assets/img/main/icon/2.png" alt="">
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <a href="#" class="sector-box red-box">
+                                         <img src="assets/img/main/icon/5.png" alt="">
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <a href="#" class="sector-box green-box">
+                                         <img src="assets/img/main/icon/3.png" alt="">
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <a href="#" class="sector-box purple-box">
+                                         <img src="assets/img/main/icon/4.png" alt="">
+                                         </a>
+                                      </li>
+                                      <li>
+                                         <a href="#" class="sector-box lightblue-box">
+                                         <img src="assets/img/main/icon/6.png" alt="">
+                                         </a>
+                                      </li>
+                                   </ul>
+                                </div>
+                                <div class="bottom">
+                                   <p>
+                                      Join over <b class="hightlight-txt">5,000 companies</b> to discover new <b class="hightlight-txt">Projects and Tender Oppertunities</b> a daily basis.
+                                   </p>
+                                </div>
+                             </div>
+                          </div>
+                       </fieldset>
+                       <fieldset class="" style="display: block;">
+                          <div class="step-2 main-form-sec">
+                             <div class="step-2-top row single-checkbox">
+                                <div class="col-md-12 step-sub-title" >Hey, what are you looking in <b class="hightlight-txt">Terms of Information</b> from our side? </div>
+                                <div class="col-md-6">
+                                   <div class="step-2-box-1">
+                                      <label class="multi-btn" (click)="selectDiselect($event)"><input type="checkbox" name="ProjectIntelligence" value="1" >Project Intelligence</label>
+                                      <p>Timeline, Companies, Consultant, Contractors, Company key Contacts working on Projects</p>
+                                   </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <div class="step-2-box-1">
+                                      <label class="multi-btn" (click)="selectDiselect($event)"><input type="checkbox" name="PublicTenderAnnouncement" value="2" >Public Tender Announcement</label>
+                                      <p>Supply Tender, Service Tender, RFQ, Enquiry, Tender Result</p>
+                                   </div>
+                                </div>
+                             </div>
+                             <!-- sector part -->
+                             <div class="sector-part active">
+                                <div class="col-md-12 step-sub-title mb-40 text-center" >What best describe your <b class="hightlight-txt">current role?</b> </div>
+                                <div class="step-3-top row">
+                                   <div class="col-md-12">
+                                      <ul>
+                                         <li><label class="btn-maroon-sector sector-popup-btn" (click)="selectDiselect($event)"><input type="checkbox" name="options[]" value="1" >Industrial</label></li>
+                                         <li><label class="btn-violet-sector sector-popup-btn" (click)="selectDiselect($event)"><input type="checkbox" name="options[]" value="1" >Oil & Gas</label></li>
+                                         <li><label class="btn-green-sector sector-popup-btn" (click)="selectDiselect($event)"><input type="checkbox" name="options[]" value="1" >Utilities</label></li>
+                                         <li><label class="btn-deepblue-sector sector-popup-btn" (click)="selectDiselect($event)"><input type="checkbox" name="options[]" value="1" >Infrastructure</label></li>
+                                         <li><label class="btn-blue-sector sector-popup-btn" (click)="selectDiselect($event)"><input type="checkbox" name="options[]" value="1" >Transportation</label></li>
+                                         <li><label class="btn-yellow-sector sector-popup-btn" (click)="selectDiselect($event)"><input type="checkbox" name="options[]" value="1" >Building & Construction</label></li>
+                                      </ul>
+                                   </div>
+                                </div>
+                             </div>
+                             <input type="button" name="next" class="next action-button" value="Continue" id="sector-choose" disabled/>
+                          </div>
+                       </fieldset>
+                       <fieldset class="">
+                          <!-- sector part -->
+                          <div class="step-3 main-form-sec">
+                             <div class="sector-pop-section">
+                                <!-- sub sector -->
+                                <div class="step-4-top row" style="max-height: 400px;overflow:auto;" >
+                                   <div class="col-md-12 sub-sector-popup-section mb-20" id="oil-gas">
+                                      <h3>Oil & Gas</h3>
+                                      <ul class="">
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-blue">
+                                               <div class="icheck-material-blue">
+                                                  <input type="checkbox" id="Upstream - Exploration & Production">
+                                                  <label for="Upstream - Exploration & Production">Upstream - Exploration & Production</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-blue">
+                                               <div class="icheck-material-blue">
+                                                  <input type="checkbox" id="Mid-stream – Transmission / Transportation / Processing">
+                                                  <label for="Mid-stream – Transmission / Transportation / Processing">Mid-stream – Transmission / Transportation / Processing</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-blue">
+                                               <div class="icheck-material-blue">
+                                                  <input type="checkbox" id="Down Stream – Refinery,  Storage, Retailing">
+                                                  <label for="Down Stream – Refinery,  Storage, Retailing">Down Stream – Refinery,  Storage, Retailing</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                      </ul>
+                                   </div>
+                                   <!-- end oil gas -->
+                                   <div class="col-md-12 sub-sector-popup-section mb-20" id="utilities">
+                                      <h3>Utilities & Infrastructure</h3>
+                                      <ul class="">
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-red">
+                                               <div class="icheck-material-red">
+                                                  <input type="checkbox" id="Power & Alternative Energy">
+                                                  <label for="Power & Alternative Energy">Power & Alternative Energy</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-red">
+                                               <div class="icheck-material-red">
+                                                  <input type="checkbox" id="Water">
+                                                  <label for="Water">Water</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-red">
+                                               <div class="icheck-material-red">
+                                                  <input type="checkbox" id="Sewege & Wastewater">
+                                                  <label for="Sewege & Wastewater">Sewege & Wastewater</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-red">
+                                               <div class="icheck-material-red">
+                                                  <input type="checkbox" id="Agriculture, Irrigation & Landscaping">
+                                                  <label for="Agriculture, Irrigation & Landscaping">Agriculture, Irrigation & Landscaping</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                      </ul>
+                                   </div>
+                                   <!-- Utilities & Infrastructure -->
+                                   <div class="col-md-12 sub-sector-popup-section mb-20" id="industrial">
+                                      <h3>Industrial</h3>
+                                      <ul class="">
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-violet">
+                                               <div class="icheck-material-violet">
+                                                  <input type="checkbox" id="Manufacturing Facilities">
+                                                  <label for="Manufacturing Facilities">Manufacturing Facilities</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-violet">
+                                               <div class="icheck-material-violet">
+                                                  <input type="checkbox" id="Storage Facilities">
+                                                  <label for="Storage Facilities">Storage Facilities</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                      </ul>
+                                   </div>
+                                   <!-- Industrial -->
+                                   <div class="col-md-12 sub-sector-popup-section mb-20" id="transportation">
+                                      <h3>Transportation</h3>
+                                      <ul class="">
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-orange">
+                                               <div class="icheck-material-orange">
+                                                  <input type="checkbox" id="Airports">
+                                                  <label for="Airports">Airports</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-orange">
+                                               <div class="icheck-material-orange">
+                                                  <input type="checkbox" id="Marine & Seaports">
+                                                  <label for="Marine & Seaports">Marine & Seaports</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-orange">
+                                               <div class="icheck-material-orange">
+                                                  <input type="checkbox" id="Railways">
+                                                  <label for="Railways">Railways</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-orange">
+                                               <div class="icheck-material-orange">
+                                                  <input type="checkbox" id="Roads">
+                                                  <label for="Roads">Roads</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-orange">
+                                               <div class="icheck-material-orange">
+                                                  <input type="checkbox" id="ICT">
+                                                  <label for="ICT">ICT</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                      </ul>
+                                   </div>
+                                   <!-- end Transportation -->
+                                   <div class="col-md-12 sub-sector-popup-section" id="building">
+                                      <h3>Building & Construction</h3>
+                                      <ul class="">
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-green">
+                                               <div class="icheck-material-green">
+                                                  <input type="checkbox" id="Residential & Commerical Spaces">
+                                                  <label for="Residential & Commerical Spaces">Residential & Commerical Spaces</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-green">
+                                               <div class="icheck-material-green">
+                                                  <input type="checkbox" id="Education, Research & Development">
+                                                  <label for="Education, Research & Development">Education, Research & Development</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-green">
+                                               <div class="icheck-material-green">
+                                                  <input type="checkbox" id="Medical & Healthcare">
+                                                  <label for="Medical & Healthcare">Medical & Healthcare</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-green">
+                                               <div class="icheck-material-green">
+                                                  <input type="checkbox" id="Hospitality">
+                                                  <label for="Hospitality">Hospitality</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-green">
+                                               <div class="icheck-material-green">
+                                                  <input type="checkbox" id="Leisure & Entertainment">
+                                                  <label for="Leisure & Entertainment">Leisure & Entertainment</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                         <li>
+                                            <div class="sub-sector-popup-section-btn sub-sector-popup-section-btn-green">
+                                               <div class="icheck-material-green">
+                                                  <input type="checkbox" id="Retail Developments">
+                                                  <label for="Retail Developments">Retail Developments</label>
+                                               </div>
+                                            </div>
+                                         </li>
+                                      </ul>
+                                   </div>
+                                   <!-- Building & Construction -->
+                                </div>
+                                <!-- end sub sector -->
+                             </div>
+                             <input type="button" name="previous" class="previous action-button-previous btn3" value="Back" />
+                             <input type="button" name="next" class="next action-button  btn4" value="Continue" id="sub-sec-btn" disabled />
+                          </div>
+                       </fieldset>
+                       <fieldset class="">
+                          <div class="step-4 main-form-sec">
+                             <div class="step-2-bottom row">
+                                <div class="tender-pop-section tender-part active">
+                                   <!-- <div class="top-title">
+                                      <h5>Welcome to Emirates</h5>
+                                      <p>Get started - Request for Online Demo and start tracking new business oppertunies based on your industry Sectors</p>
+                                   </div> -->
+                                   <div class="material-textfield">
+                                      <label>Enter <b class="hightlight-txt">Select your core products/ service</b> from our list to provide you best solution.</label>
+                                      <input placeholder=" " type="text" name="tagname" class="form-control tagname" >
+                                   </div>
+                                   <p>*If you want you can skip this step.</p>
+                                </div>
+                                <!-- end tender -->
+                             </div>
+                             <input type="button" name="previous" class="previous action-button-previous" value="Back" />
+                             <input type="button" name="next" class="next action-button con-btn"  value="Continue"/>
+                          </div>
+                       </fieldset>
+                       <fieldset class="">
+                          <div class="step-2 main-form-sec">
+                             <div class="step-2-bottom row">
+                                <div class="col-md-12 step-sub-title" >What best describe your <b class="hightlight-txt">Company's Activities?</b></div>
+                                <div class="step-2-bottom-check last-step-check">
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Developer">
+                                      <label for="Developer">Developer</label>
+                                   </div>
+                 <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Manufacturer ">
+                                      <label for="Manufacturer ">Manufacturer </label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Consultant">
+                                      <label for="Consultant">Consultant</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Contractor">
+                                      <label for="Contractor">Contractor</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Sub Contractor">
+                                      <label for="Sub Contractor">Sub Contractor</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Supplier">
+                                      <label for="Supplier">Supplier</label>
+                                   </div>
+                                </div>
+                                <div class="col-md-12 step-sub-title" >What best describe your <b class="hightlight-txt">Current Role?</b> </div>
+                                <div class="step-2-bottom-check single-check last-step-check-1" id="">
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Business Owner">
+                                      <label for="Business Owner">Business Owner</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="CEO/VP/ Director">
+                                      <label for="CEO/VP/ Director">CEO/VP/ Director</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Manager/ Team Leader">
+                                      <label for="Manager/ Team Leader">Manager/ Team Leader</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Team Member">
+                                      <label for="Team Member">Team Member</label>
+                                   </div>
+                                   <div class="icheck-material-deepblue position-relative inline-flex">
+                                      <input type="checkbox" id="Freelance ">
+                                      <label for="Freelance ">Freelance</label>
+                                   </div>
+                                </div>
+                                <div class="meeting-schedule row">
+                                   <div class="col-md-4">
+                                      <img src="assets/img/calendar.png">
+                                   </div>
+                                   <div class="col-md-8">
+                                      <h4>Schedule A Demo?</h4>
+                                      <h3>Schedule your live, personalized demo with our Sales Representative Now </h3>
+                                      <p>Select your preferred date & book online demo to explore &lt;&lt;Website Name&gt;&gt; services.</p>
+                                   </div>
+                                </div>
+                             </div>
+                             <input type="button" name="previous" class="previous action-button-previous" value="Back" />
+                             <button class="cta next" id="last-step-btn" name="next" type="button" disabled>
+                                <span>Schedule A Meeting</span>
+                                <span>
+                                   <svg width="40px" height="24px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                      <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                         <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                         <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                         <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                                      </g>
+                                   </svg>
+                                </span>
+                             </button>
+                             <button type="button" class="close laterbtn" data-dismiss="modal" data-toggle="modal" data-target="#indexModal1" aria-label="Close">I'll do it later</button>
+                          </div>
+                       </fieldset>
+                       <fieldset class="">
+                          <div class="main-form-sec">
+                             <div class="form-card main-form-sec">
+                                <div class="calendly-inline-widget" data-url="https://calendly.com/metenders/demo" style="min-width:320px;height:630px;"></div>
+                             </div>
+                             <input type="button" name="previous" class="previous action-button-previous cal-bk-btn" value="Back" />
+                          </div>
+                       </fieldset>
+                    </form>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <div class="modal indexModal fade" id="indexModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog col-md-4" role="document">
+           <div class="modal-content">
+              <div class="modal-body">
+                 <div class="thankyou-txt">
+                    <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+                       <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                          <path class="circle" d="M13 1C6.372583 1 1 6.372583 1 13s5.372583 12 12 12 12-5.372583 12-12S19.627417 1 13 1z"/>
+                          <path class="tick" d="M6.5 13.5L10 17 l8.808621-8.308621"/>
+                       </g>
+                    </svg>
+                    <h3>Thank You</h3>
+                    <p>Thank you for contacting &lt;&lt;Site Name&gt;&gt;. We are reviewing your requirement and get in touch as soon as possible. In the meantime, you can explore our <a href="project-grid-new.html">&lt;&lt;Projects&gt;&gt;</a>, <a href="tender-grid-new.html">&lt;&lt;Tenders&gt;&gt;</a> & <a href="news-listing.html">&lt;&lt;Newsletter&gt;&gt;</a> pages.</p>
+                    <button type="button" class="close okbtn" data-dismiss="modal" aria-label="Close">OK</button>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>

@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 *,
 *::before,
 *::after {
@@ -14,25 +14,21 @@
   }
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
   margin: 0px;
-padding:0px;
-font-family: 'Poppins', sans-serif !important;
-font-weight:normal;
-color: #545454;
-font-size:16px !important;
+  padding: 0px;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: normal;
+  color: #545454;
+  font-size: 16px !important;
 }
-
-
-
 
 .slick-slider {
   width: 90%;
   margin: auto;
-  // background: #000;
 }
 
 .nav-btn {
@@ -43,28 +39,28 @@ font-size:16px !important;
   top: 7px !important;
 }
 .prev-slide {
-  background: red;
-  // background: url(assets/img/icon/arrow.png) no-repeat scroll 0 0;
+  background: url(assets/img/icon/arrow.png);
   left: -33px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(90deg);
+  width: 20px;
 }
 
 .next-slide {
-  background: red;
-  /* background: url(assets/images/nav-icon.png) no-repeat scroll -24px 0px; */
+  background: url(assets/img/icon/arrow.png);
   right: -33px;
-}
-
-.prev-slide:hover {
-  background-position: 0px -53px;
-}
-
-.next-slide:hover {
-  background-position: -24px -53px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(-90deg);
+  width: 20px;
 }
 // .slick-track{
 //   transform: translate3d(-855px, 0px, 0px) !important;
 // }
-.accordion-item{
+.accordion-item {
   border: none !important;
 }
 .accordion-button:focus {
@@ -74,7 +70,7 @@ font-size:16px !important;
   box-shadow: none;
   border: none;
 }
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
   background-color: transparent;
   box-shadow: none;
 }

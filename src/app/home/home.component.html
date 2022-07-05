@@ -115,7 +115,7 @@
                     <img src="assets/img/service-icons/service-1.png" />
                   </div>
                   <div class="icheck-material-blue">
-                    <input type="checkbox" id="Public Tender" />
+                    <input type="checkbox" id="Public Tender" (click)="services($event,1)"/>
                     <label for="Public Tender">Public Tender</label>
                   </div>
                 </div>
@@ -126,7 +126,7 @@
                     <img src="assets/img/service-icons/service-2.png" />
                   </div>
                   <div class="icheck-material-light-green">
-                    <input type="checkbox" id="RFQ/FRQ/EOI" />
+                    <input type="checkbox" id="RFQ/FRQ/EOI" (click)="services($event,2)"/>
                     <label for="RFQ/FRQ/EOI">RFQ/FRQ/EOI</label>
                   </div>
                 </div>
@@ -137,7 +137,7 @@
                     <img src="assets/img/service-icons/service-3.png" />
                   </div>
                   <div class="icheck-material-red">
-                    <input type="checkbox" id="Project Bidders" />
+                    <input type="checkbox" id="Project Bidders" (click)="services($event,3)"/>
                     <label for="Project Bidders">Project Bidders</label>
                   </div>
                 </div>
@@ -148,7 +148,7 @@
                     <img src="assets/img/service-icons/service-4.png" />
                   </div>
                   <div class="icheck-material-deepblue">
-                    <input type="checkbox" id="Project Intelligence" />
+                    <input type="checkbox" id="Project Intelligence" (click)="services($event,4)"/>
                     <label for="Project Intelligence">Project Intelligence</label>
                   </div>
                 </div>
@@ -159,7 +159,7 @@
                     <img src="assets/img/service-icons/service-5.png" />
                   </div>
                   <div class="icheck-material-deepgreen">
-                    <input type="checkbox" id="Project Analytics" />
+                    <input type="checkbox" id="Project Analytics" (click)="services($event,5)"/>
                     <label for="Project Analytics">Project Analytics</label>
                   </div>
                 </div>
@@ -170,7 +170,7 @@
                     <img src="assets/img/service-icons/service-6.png" />
                   </div>
                   <div class="icheck-material-green">
-                    <input type="checkbox" id="Awarded Consultant" />
+                    <input type="checkbox" id="Awarded Consultant" (click)="services($event,6)"/>
                     <label for="Awarded Consultant">Awarded Consultant</label>
                   </div>
                 </div>
@@ -181,7 +181,7 @@
                     <img src="assets/img/service-icons/service-7.png" />
                   </div>
                   <div class="icheck-material-orange">
-                    <input type="checkbox" id="Awarded Contractors" />
+                    <input type="checkbox" id="Awarded Contractors" (click)="services($event,7)"/>
                     <label for="Awarded Contractors">Awarded Contractors</label>
                   </div>
                 </div>
@@ -192,7 +192,7 @@
                     <img src="assets/img/service-icons/service-8.png" />
                   </div>
                   <div class="icheck-material-bottolgreen">
-                    <input type="checkbox" id="Project Key Shakeholders" />
+                    <input type="checkbox" id="Project Key Shakeholders" (click)="services($event,8)"/>
                     <label for="Project Key Shakeholders">Project Key Shakeholders</label>
                   </div>
                 </div>
@@ -203,7 +203,7 @@
                     <img src="assets/img/service-icons/service-9.png" />
                   </div>
                   <div class="icheck-material-violet">
-                    <input type="checkbox" id="Tender Announcement" />
+                    <input type="checkbox" id="Tender Announcement" (click)="services($event,9)"/>
                     <label for="Tender Announcement">Tender Announcement</label>
                   </div>
                 </div>
@@ -212,7 +212,10 @@
           </div>
           <div class="btn-center mt-30">
             <a href="#" data-toggle="modal" data-target="#indexModal"
-              class="site-button-secondry opposite-color button-skew m-l10">
+              class="site-button-secondry opposite-color button-skew m-l10" *ngIf="!getStart">
+              <span>Get Started</span><i class="fa fa-angle-right"></i>
+            </a>
+            <a class="site-button-secondry opposite-color button-skew m-l10" (click)="getStarted()" *ngIf="getStart">
               <span>Get Started</span><i class="fa fa-angle-right"></i>
             </a>
           </div>
@@ -764,14 +767,14 @@
                     <form id="msform" class="contact-form needs-validation">
                        <button type="reset" class="close cls-btn" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
                        <!-- progressbar -->
-                       <fieldset class="row mlr-0" style="display: none;">
+                       <fieldset class="row mlr-0" *ngIf="slide1">
                           <div class="col-md-8 main-form-sec" id="register-form">
                              <div class="top-title">
                                 <h5>Welcome to &lt;&lt;Site Name&gt;&gt;</h5>
                                 <p>Get started – Request for Online Demo and start tracking new business opportunities based on your Industry Sectors</p>
                              </div>
                              <div class="material-textfield">
-                                <input placeholder=" " type="text" name="fname" class="form-control form-control-lg" id="fname" required>
+                                <input placeholder=" " type="text" name="fname" [(ngModel)]="fname" class="form-control form-control-lg" id="fname" required>
                                 <label class="material-label">Enter Name</label>
                              </div>
                              <div class="material-textfield">
@@ -788,11 +791,14 @@
                              </div>
                              <div class="capcha-img">
                                 <img src="assets/img/capcha.png">
+                                <!-- <ngx-recaptcha2 #captchaElem siteKey="6LeFR6cUAAAAAGviLYm9xPsWGyVaTLjBCDFma9Yp" (success)="handleSuccess($event)" [size]="size"
+                                [hl]="lang" [theme]="theme" [type]="type" formControlName="recaptcha">
+                               </ngx-recaptcha2> -->
                              </div>
                              <div class="login-txt">
                                 <p class="txt-account">Already have an account? <a href="#">Log in </a></p>
                              </div>
-                             <input type="button" name="next" id="register" class="next action-button" value="Continue" (click)="register()" />
+                             <input type="button" name="next" id="register" class="next action-button" value="Continue" (click)="registerSlide(1)" />
                           </div>
                           <div class="col-md-4 p-0">
                              <div class="modal-right">
@@ -838,7 +844,7 @@
                              </div>
                           </div>
                        </fieldset>
-                       <fieldset class="" style="display: block;">
+                       <fieldset class="" *ngIf="slide2">
                           <div class="step-2 main-form-sec">
                              <div class="step-2-top row single-checkbox">
                                 <div class="col-md-12 step-sub-title" >Hey, what are you looking in <b class="hightlight-txt">Terms of Information</b> from our side? </div>
@@ -871,10 +877,10 @@
                                    </div>
                                 </div>
                              </div>
-                             <input type="button" name="next" class="next action-button" value="Continue" id="sector-choose" disabled/>
+                             <input type="button" name="next" class="next action-button" value="Continue" (click)="registerSlide(2)"/>
                           </div>
                        </fieldset>
-                       <fieldset class="">
+                       <fieldset class="" *ngIf="slide3">
                           <!-- sector part -->
                           <div class="step-3 main-form-sec">
                              <div class="sector-pop-section">
@@ -1074,10 +1080,10 @@
                                 <!-- end sub sector -->
                              </div>
                              <input type="button" name="previous" class="previous action-button-previous btn3" value="Back" />
-                             <input type="button" name="next" class="next action-button  btn4" value="Continue" id="sub-sec-btn" disabled />
+                             <input type="button" name="next" class="next action-button  btn4" value="Continue" (click)="registerSlide(3)"/>
                           </div>
                        </fieldset>
-                       <fieldset class="">
+                       <fieldset class="" *ngIf="slide4">
                           <div class="step-4 main-form-sec">
                              <div class="step-2-bottom row">
                                 <div class="tender-pop-section tender-part active">
@@ -1094,10 +1100,10 @@
                                 <!-- end tender -->
                              </div>
                              <input type="button" name="previous" class="previous action-button-previous" value="Back" />
-                             <input type="button" name="next" class="next action-button con-btn"  value="Continue"/>
+                             <input type="button" name="next" class="next action-button con-btn"  value="Continue" (click)="registerSlide(4)"/>
                           </div>
                        </fieldset>
-                       <fieldset class="">
+                       <fieldset class="" *ngIf="slide5">
                           <div class="step-2 main-form-sec">
                              <div class="step-2-bottom row">
                                 <div class="col-md-12 step-sub-title" >What best describe your <b class="hightlight-txt">Company's Activities?</b></div>
@@ -1106,7 +1112,7 @@
                                       <input type="checkbox" id="Developer">
                                       <label for="Developer">Developer</label>
                                    </div>
-                 <div class="icheck-material-deepblue position-relative inline-flex">
+                                    <div class="icheck-material-deepblue position-relative inline-flex">
                                       <input type="checkbox" id="Manufacturer ">
                                       <label for="Manufacturer ">Manufacturer </label>
                                    </div>
@@ -1162,7 +1168,7 @@
                                 </div>
                              </div>
                              <input type="button" name="previous" class="previous action-button-previous" value="Back" />
-                             <button class="cta next" id="last-step-btn" name="next" type="button" disabled>
+                             <button class="cta next" id="last-step-btn" name="next" type="button" (click)="registerSlide(5)">
                                 <span>Schedule A Meeting</span>
                                 <span>
                                    <svg width="40px" height="24px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -1177,7 +1183,7 @@
                              <button type="button" class="close laterbtn" data-dismiss="modal" data-toggle="modal" data-target="#indexModal1" aria-label="Close">I'll do it later</button>
                           </div>
                        </fieldset>
-                       <fieldset class="">
+                       <fieldset class="" *ngIf="slide6">
                           <div class="main-form-sec">
                              <div class="form-card main-form-sec">
                                 <div class="calendly-inline-widget" data-url="https://calendly.com/metenders/demo" style="min-width:320px;height:630px;"></div>
